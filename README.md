@@ -2,9 +2,9 @@
 A Simple Flask News Application for Code Lou
 
 ### Features
--Connect to an external/3rd party API and read data into your app
--Create and call at least 3 functions or methods, at least one of which must return a value that is used somewhere else in your code
--Create a dictionary or list, populate it with several values, retrieve at least one value, and use it in your program.
+- Connect to an external/3rd party API and read data into your app
+- Create and call at least 3 functions or methods, at least one of which must return a value that is used somewhere else in your code
+- Create a dictionary or list, populate it with several values, retrieve at least one value, and use it in your program.
 
 ### Quick Start for Running App
 

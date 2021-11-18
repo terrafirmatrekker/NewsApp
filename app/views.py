@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import Flask, render_template, request, url_for
 from newsapi import NewsApiClient
 import requests
 
@@ -69,6 +69,35 @@ def Crypto():
     )
 
     return render_template("crypto.html", context=mylist)
+
+
+@app.route("/local")
+def Local():
+    newsapi = NewsApiClient(api_key=NEWS_API_KEY)
+    topheadlines = newsapi.get_everything(
+        q="Louisville",
+        language="en",
+        sort_by="relevancy",
+    )
+    articles = topheadlines["articles"]
+
+    desc = []
+    news = []
+    img = []
+
+    for i in range(len(articles)):
+        myarticles = articles[i]
+        news.append(myarticles["title"])
+        desc.append(myarticles["description"])
+        img.append(myarticles["urlToImage"])
+
+    mylist = zip(
+        news,
+        desc,
+        img,
+    )
+
+    return render_template("local.html", context=mylist)
 
 
 @app.route("/weather")

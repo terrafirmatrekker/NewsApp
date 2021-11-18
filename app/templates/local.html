@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Local{% endblock %}
+{% block body %}
+<div class="jumbotron" style="color:black">
+    <h1 style="color:black">
+        Local Headlines
+    </h1>
+</div>
+<div class="row" data-masonry='{"percentPosition": true }'>
+  <div class="col-*">
+    <div class="card">
+      {% for new, des, i in context %}
+      <img src="{{i}}"class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{new}}</h5>
+        <p class="card-text">{{des}}</p>
+        <a href="#" class="btn btn-primary">Read More</a> 
+      </div>
+      {% endfor %}
+{% endblock %}
